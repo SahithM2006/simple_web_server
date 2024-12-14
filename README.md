@@ -32,61 +32,74 @@ Testing the webserver.
         /* Global Styles */
         body {
             font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif;
-            background-color: #f4f4f4;
+            background-color: #e8f1f8;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         h1 {
-            color: rgb(0, 37, 60);
+            color: #00334e;
             margin-bottom: 30px;
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        /* Container for the cards */
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+        /* Table Styles */
+        table {
             width: 90%;
             max-width: 1200px;
-            margin: 20px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ccdce3;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        /* Card Styles */
-        .card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        th, td {
+            padding: 15px;
+            text-align: left;
             border: 1px solid #ddd;
-            transition: transform 0.3s ease-in-out;
+            font-size: 1rem;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        th {
+            background-color: #00496b;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        .card h3 {
-            color: rgb(0, 37, 60);
-            font-size: 20px;
-            margin-bottom: 10px;
+        td {
+            color: #00334e;
+            background-color: #ffffff;
         }
 
-        .card p {
-            color: rgb(0, 37, 60);
-            font-size: 16px;
-            margin: 0;
+        tr:nth-child(even) td {
+            background-color: #f4f9fc;
+        }
+
+        /* Add hover effects */
+        tr:hover td {
+            background-color: #dce9f3;
+            color: #002c43;
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .card-container {
-                grid-template-columns: 1fr;
+        (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+
+            th, td {
+                padding: 10px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -95,39 +108,47 @@ Testing the webserver.
 
     <h1>Laptop Features and Components</h1>
 
-    <div class="card-container">
-        <!-- Card for each feature -->
-        <div class="card">
-            <h3>Processor</h3>
-            <p>13th Intel(R) Core(TM) i5-1224P, 1300 MHz, 10 Core(s), 12 Logical Processor</p>
-        </div>
-        <div class="card">
-            <h3>Storage (HDD/SSD)</h3>
-            <p>SAMSUNG QXST2708THES-00BL1</p>
-        </div>
-        <div class="card">
-            <h3>Memory</h3>
-            <p>800 GB</p>
-        </div>
-        <div class="card">
-            <h3>Graphics Card</h3>
-            <p>Intel(R) Iris(R) Xe Graphics, NVIDIA GeForce MX550</p>
-        </div>
-        <div class="card">
-            <h3>Operating System</h3>
-            <p>Edition: Linux, Version: 22H2, OS Build: 22621.4169</p>
-        </div>
-        <div class="card">
-            <h3>RAM</h3>
-            <p>32.0 GB</p>
-        </div>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Processor</td>
+                <td>13th Intel(R) Core(TM) i5-1224P, 1300 MHz, 10 Core(s), 12 Logical Processor</td>
+            </tr>
+            <tr>
+                <td>Storage (HDD/SSD)</td>
+                <td>SAMSUNG QXST2708THES-00BL1</td>
+            </tr>
+            <tr>
+                <td>Memory</td>
+                <td>800 GB</td>
+            </tr>
+            <tr>
+                <td>Graphics Card</td>
+                <td>Intel(R) Iris(R) Xe Graphics, NVIDIA GeForce MX550</td>
+            </tr>
+            <tr>
+                <td>Operating System</td>
+                <td>Edition: Linux, Version: 22H2, OS Build: 22621.4169</td>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td>32.0 GB</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
+
 ```
 # OUTPUT:
-![Screenshot 2024-12-07 231946](https://github.com/user-attachments/assets/89456b8b-d1a8-4d17-847e-f06f972b3df8)
+![Screenshot 2024-12-14 142019](https://github.com/user-attachments/assets/38cb7b11-a4b3-4e2c-91ed-db4f02e32cde)
 
 # RESULT:
 The program for implementing simple webserver is executed successfully.
