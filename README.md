@@ -145,10 +145,22 @@ Testing the webserver.
 
 </body>
 </html>
+class myhandler(BaseHTTPRequestHandler):
+   def do_GET(self):
+       print("request received")
+       self.send_response(200)
+       self.send_headers('content-type','text/html;charset=utf-8')
+       self.end_headers()
+       self.wfile.write(content.encode())
+server_address=('',8000)
+httpd=HTTPServer(server_address,myhandler)
+print("my webser is running...")
+httpd.serve_forever()
 
 ```
 # OUTPUT:
 ![Screenshot 2024-12-14 142019](https://github.com/user-attachments/assets/38cb7b11-a4b3-4e2c-91ed-db4f02e32cde)
+![Screenshot_2024-12-23_103330 1](https://github.com/user-attachments/assets/ebf7b321-0435-4819-84c2-9d82c071c729)
 
 # RESULT:
 The program for implementing simple webserver is executed successfully.
